@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   # 使用了第三方静态库
   # s.ios.vendored_library = ''
   #s.ios.vendored_libraries = ''
-  s.ios.vendored_libraries = 'GTIOPSDK/GTExtensionSDK.a','GTIOPSDK/libGTCommonSDK.a','GTIOPSDK/libGTIOP.a'
+  s.ios.vendored_libraries = 'GTIOPSDK/libGTCommonSDK.a','GTIOPSDK/libGTIOP.a'
 
   # 所需的framework，多个用逗号隔开
   s.ios.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','Security','AdSupport'
