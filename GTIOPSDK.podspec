@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
   s.name         = "GTIOPSDK"
   # 版本号/库原代码的版本
-  s.version      = "1.0.0.0"
+  s.version      = "1.3.0.0"
   # 简介
   s.summary      = "个推 鲸智运营中心 iOS SDK CocoaPods集成库"
 
@@ -20,17 +20,16 @@ Pod::Spec.new do |s|
   # iOS支持的pod最低版本 / iOS对应的版本
   s.ios.deployment_target = "8.0"
 
-  s.source_files  = 'GTIOPSDK/*.h'
   # 使用了第三方静态库
-  # s.ios.vendored_library = ''
-  #s.ios.vendored_libraries = ''
-  s.ios.vendored_libraries = 'GTIOPSDK/libGTCommonSDK.a','GTIOPSDK/libGTIOP.a'
+  s.ios.vendored_frameworks = 'GTCountSDK.framework'
+
+  s.dependency 'GTCommonSDK', '>= 3.0.0.0'
 
   # 所需的framework，多个用逗号隔开
   s.ios.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','Security','AdSupport'
 
   # “弱引用”所需的framework，多个用逗号隔开
-  s.ios.weak_frameworks = 'UserNotifications'
+  s.ios.weak_frameworks = 'AppTrackingTransparency'
 
   # 所需的library，多个用逗号隔开
   s.ios.libraries = 'z','sqlite3.0','c++','resolv'
